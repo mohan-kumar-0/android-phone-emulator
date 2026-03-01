@@ -25,6 +25,13 @@
     gap: 24px;
 }
 
+@media (max-width: 450px) {
+    .shade-panel {
+        border-radius: 0;
+        padding-top: 20px;
+    }
+}
+
 .shade-header {
     display: flex;
     justify-content: space-between;
