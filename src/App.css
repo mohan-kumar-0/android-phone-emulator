@@ -54,96 +54,265 @@
 }
 
 /* Mock App Styles */
-.settings-list {
-  margin-top: 20px;
+.app-header {
+  margin-bottom: 24px;
 }
 
 .setting-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   padding: 16px;
-  background: var(--surface);
+  background: var(--surface-variant);
   border-radius: var(--radius-md);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.setting-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.setting-icon.blue {
+  background: #4285F4;
+}
+
+.setting-icon.green {
+  background: #34A853;
+}
+
+.setting-icon.purple {
+  background: #9C27B0;
+}
+
+.setting-icon.orange {
+  background: #FBBC05;
+}
+
+.setting-text p {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.setting-text span {
+  font-size: 12px;
+  color: var(--on-surface-variant);
 }
 
 .chrome {
   background: #fff;
   color: #000;
+  padding: 0;
 }
 
 .address-bar {
   background: #f1f3f4;
-  padding: 8px 16px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  padding: 12px 20px;
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 40px;
   font-size: 14px;
+  text-align: center;
 }
 
-.calculator {
+.browser-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.google-logo {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 28px;
+  border: 1px solid #dfe1e5;
+  background: #fff;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.shortcuts {
+  display: flex;
+  gap: 20px;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  min-width: 60px;
 }
 
 .calc-display {
-  font-size: 48px;
+  font-size: 64px;
   text-align: right;
-  padding: 20px;
+  padding: 40px 20px;
   flex-grow: 1;
+  font-weight: 300;
+  color: white;
 }
 
 .calc-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
+  padding: 20px;
 }
 
 .calc-grid button {
-  background: var(--surface-variant);
-  color: white;
-  padding: 20px;
+  aspect-ratio: 1;
   border-radius: 50%;
+  font-size: 24px;
+  background: #333;
+  color: white;
+  transition: filter 0.2s;
+}
+
+.calc-grid button:active {
+  filter: brightness(1.5);
+}
+
+.calc-grid button[class*="btn-/"],
+.calc-grid button[class*="btn-*"],
+.calc-grid button[class*="btn--"],
+.calc-grid button[class*="btn-+"],
+.calc-grid button[class*="btn-="] {
+  background: #f57c00;
+}
+
+.calc-grid .btn-C {
+  background: #757575;
+}
+
+/* Mail and Messages common */
+.mail-list,
+.msg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mail-item,
+.msg-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  transition: background 0.2s;
+}
+
+.mail-item.unread {
+  background: rgba(var(--primary), 0.05);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
   font-size: 20px;
 }
 
-.camera {
-  background: #000;
-  padding: 0;
+.avatar.red {
+  background: #EA4335;
 }
 
-.camera-view {
+.avatar.blue {
+  background: #4285F4;
+}
+
+.avatar.green {
+  background: #34A853;
+}
+
+.avatar.grey {
+  background: #757575;
+}
+
+.avatar.orange {
+  background: #FBBC05;
+}
+
+.mail-meta,
+.msg-meta {
   flex-grow: 1;
-  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.mail-top,
+.msg-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.sender {
+  font-weight: 600;
+}
+
+.time {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.subject {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.snippet {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-pill {
+  background: var(--surface-variant);
+  padding: 12px 24px;
+  border-radius: 28px;
+  color: var(--on-surface-variant);
+}
+
+.fab {
+  position: absolute;
+  right: 20px;
+  bottom: 80px;
+  background: var(--primary);
+  color: var(--bg-dark);
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+}
+
+.camera-controls {
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 40px;
-}
-
-.shutter {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 4px solid white;
-  position: relative;
-}
-
-.shutter::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  right: 4px;
-  bottom: 4px;
-  background: white;
-  border-radius: 50%;
-}
-
-/* Gesture Zones */
-.shade-handle {
-  position: absolute;
-  top: 0;
-  left: 20%;
-  width: 60%;
-  height: 10px;
-  z-index: 100;
-  cursor: ns-resize;
+  align-items: center;
 }
