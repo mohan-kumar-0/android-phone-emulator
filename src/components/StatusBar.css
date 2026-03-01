@@ -1,0 +1,29 @@
+.status-bar {
+    height: var(--status-bar-height);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 100;
+    color: white;
+    background: transparent;
+}
+
+.status-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.battery-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.battery-level {
+    font-size: 12px;
+}
